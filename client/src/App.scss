@@ -1,0 +1,208 @@
+ul {
+    margin-bottom: 0;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    
+    
+    display: flex;
+    flex-direction: column;
+    // min-height: 100vh;
+    width: 100%;
+
+    
+}
+
+.container {
+    min-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+// .main {
+//     display: none;
+// }
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #5e5373;
+    z-index: 50;
+}
+
+.header::before {
+    content: '';
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5e5373;
+    z-index: 2;
+    
+}
+
+.header__body{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+   
+}
+
+.header__logo {
+    position: relative;
+    z-index: 3;
+}
+.header__burger {
+     display: none;
+    
+}
+
+.header__menu {   
+}
+.header__list {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;  
+}
+.header__list li {
+    list-style: none;
+    margin-right: 12px;   
+}
+
+.nav-list__link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-list__link--active {
+    color: #b3055f;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 767px) {
+
+    .wrapper.lock {
+        
+    }
+
+    .header__body {
+        height: 50px;
+    }
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__burger::before,
+    .header__burger::after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__burger::before {
+        top: 0;
+    }
+    .header__burger::after {
+        bottom: 0;
+    }
+
+    .header__burger.active span {
+        transform:  scale(0);
+
+    }
+
+    .header__burger.active::before {
+        transform:  rotate(45deg);
+        top: 9px;
+    }
+
+    .header__burger.active::after {
+        transform:  rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .header__menu {
+        position: fixed;
+        
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #18b5a4;  
+        padding: 70px 10px 0 10px;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__menu.active {
+        left: 0;
+    }
+
+    .header__list {
+        display: block;
+    }
+
+    .header__list li {
+        margin: 0 0 20px 0;
+    }
+}
+
+
+.main {
+    padding: 100px 0px 60px 0px;
+    flex: 1 1 auto;
+    
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    background-color: #5e5373;
+}
+
+
+
+// Страница входа и регистрации шадоу на кард
+
+.box-shadow-card {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.form__label-red {
+    outline: 3px solid #b3055f;
+}

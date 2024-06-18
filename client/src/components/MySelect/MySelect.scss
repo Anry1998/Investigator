@@ -1,0 +1,61 @@
+.select {
+    position: relative;
+    width: 250px;
+    margin: 0 auto;
+}
+
+// .select.is-active .select__body {
+//     display: block;
+// }
+
+.select__header {
+    border: 1px solid #ccc;
+    display: flex;
+    cursor: pointer;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.select__current {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px;
+}
+
+.select__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+}
+
+.select__body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    border: 1px solid #cccccc;
+    border-top: 0;
+
+    display: none;
+}
+
+.select__body.is-active {
+    display: block;
+}
+
+.select__item {
+    cursor: pointer;
+    line-height: 24px;
+    font-size: 16px;
+    padding: 8px;
+
+}
+
+.select__item:hover {
+    background-color: #1fa7d4;
+}

@@ -1,0 +1,25 @@
+.input__style{
+    height: 75px;
+
+
+
+    .input__div_style{
+        color: red;
+    }
+}
+
+.card__smoll{
+    background-color: #87bbde;
+    
+}
+
+
+@media (max-width: 767px) {
+    .card__smoll{
+         background-color: #df2e2e;
+         width: 100%;
+         
+         
+    }
+    
+}
