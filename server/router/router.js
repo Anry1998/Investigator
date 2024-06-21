@@ -40,7 +40,7 @@ router.post('/statementname', StatementController.sendStatementName)
 router.post('/statementtime', StatementController.sendStatementTime)
 
 
-
+ 
 ///////////////////////////////
 
 router.post('/createuser2', UserController.createuser2) 
@@ -54,7 +54,7 @@ router.get('/ok', (req, res) => {
     res.send('Ok')
 })
 
-
+ 
 
 
 module.exports = router

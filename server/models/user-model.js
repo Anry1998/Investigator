@@ -6,10 +6,12 @@ const User = sequelize.define('user', {
     id: {
         // Задаем тип данных
         type: DataTypes.INTEGER, 
+        
+        // foreignKey: true,
+        // постоянно значение будет увеличиваться на 1
+        autoIncrement: true,
         // всегда будет содержать уникальные данные, нибудет нулевых значений
         primaryKey: true, 
-        // постоянно значение будет увеличиваться на 1
-        autoIncrement: true
     },
 
     email: {
@@ -57,40 +59,27 @@ const User = sequelize.define('user', {
     // updatedAt: 'updatedTimeStamps',
     // Мякгое удаление, Когда ты удаляешь свою учетную запись, это на самом деле не удаляет ее из бд
     // А ставит некий флажок, что ты ее удалил
-    paranoid: true,
+    // paranoid: true,
     // deletedAt: true
 })
 
 // Создаем модель для пользователя со следующими атрибутами
 
 
-const User2 = sequelize.define('User2', {
-    // имя
-    name: DataTypes.STRING,
-    // любимый цвет - по умолчанию зеленый
-    favouriteColor: {
-      type: DataTypes.STRING,
-      defaultValue: 'green',
-    },
-    // возраст
-    age: DataTypes.INTEGER,
-    // деньги
-    cash: DataTypes.INTEGER,
-  }, {
-    timestamps: false,
-  })
-
   
 const Token = sequelize.define('token', {
     
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true}, 
+    id: {type: DataTypes.INTEGER,
+        autoIncrement: true, 
+        primaryKey: true, 
+        
+    }, 
 
     refreshToken: {
         type: DataTypes.STRING,
         require: true
     },
 
-    
 })
 
 
@@ -218,7 +207,7 @@ const PersonalInformation = sequelize.define('personalInformation', {
 const Statement = sequelize.define('statement', {
     id: {
         type: DataTypes.INTEGER, 
-        primaryKey: true, 
+         primaryKey: true, 
         autoIncrement: true
     },
 
@@ -243,6 +232,8 @@ const Statement = sequelize.define('statement', {
 })
 
 const StatementName = sequelize.define('statementname', {
+    
+
     statementId: {
         type: DataTypes.INTEGER,  
     },
@@ -262,6 +253,8 @@ const StatementName = sequelize.define('statementname', {
 })
 
 const StatementTime = sequelize.define('statementtime', {
+    
+    
     statementId: {
         type: DataTypes.INTEGER,  
     },
@@ -285,31 +278,6 @@ const StatementTime = sequelize.define('statementtime', {
 })
 
 
-const ChatList = sequelize.define('chatList', {
-    chatId: {
-        type: DataTypes.INTEGER,  
-        require: true,
-        autoIncrement: true
-    },
-
-    chatСreatorId: {
-        type: DataTypes.INTEGER, 
-        require: true
-    },
-
-    time: {
-        type: DataTypes.STRING, 
-        
-        // Обязательный параметр
-        require: true,
-
-    },
-   
- 
-}, {
-    timestamps: false,
-})
-
 // Связь один к одному при этом Token принадлежит User
 // Если мы напишем только User.hasOne(Token) то мы можем найти только токен вбив id  user
 User.hasOne(Token)
@@ -331,7 +299,6 @@ StatementTime.belongsTo(Statement)
 
 module.exports = {
     User,
-    User2,
     Token,
     PersonalInformation,
     Statement,
