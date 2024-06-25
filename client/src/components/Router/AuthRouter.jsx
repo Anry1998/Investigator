@@ -24,6 +24,7 @@ import { Context } from "../../index";
 
 
 
+
 const AuthRouter = () => {
 
     const navigate = useNavigate()
@@ -70,6 +71,7 @@ const AuthRouter = () => {
                                 <Route path='/statement/fraud' element={<StatementFraud/>}></Route>
                                 <Route path='/investigatorPage' element={<InvestigatorPage/>}></Route>
                                 <Route path='/getuserapplicant/:id' element={<ApplicantPage/>}></Route>
+                                
                             </Routes>                            
                         </div>
                         
